@@ -65,7 +65,7 @@
 
 <header>
   <h1>Easy Reci — Privacy Policy</h1>
-  <p class="meta">Last updated 2 October 2026</p>
+  <p class="meta">Last updated 23 October 2026</p>
 </header>
 
 <p>Easy Reci is a Hong Kong recipe app. It collects supermarket discounts each day and
@@ -86,6 +86,9 @@ about you.</p>
       Apple or Google, we store only the identifier that service gives us</li>
   <li>Your dietary preferences and language choice</li>
   <li>The recipes you mark as favourites</li>
+  <li>A security key for your device, created with Apple&rsquo;s App Attest service. It lets our
+      server confirm that requests come from the genuine Easy Reci app on a real iPhone. We
+      store the key&rsquo;s identifier and public half, and link it to your account</li>
   <li>Your subscription status, and a count of how many cloud recipe generations you have
       used in the current period, so free-tier limits can be applied</li>
 </ul>
@@ -130,6 +133,20 @@ that use its services</a>.</p>
 supermarket websites. It is about products, not about you, and browsing it involves no
 personal data at all.</p>
 
+<h2>Error reports</h2>
+
+<p>When something goes wrong on our server &mdash; a supermarket website we could not read, or a
+recipe that failed to generate &mdash; a report is sent to <strong>Sentry</strong>, an error
+monitoring service, so we can find and fix the problem. This covers our server only; the app on
+your phone sends nothing to Sentry.</p>
+
+<p>Before a report leaves our server, we remove the details of the web request that triggered
+it, including its address, headers and contents, along with any email address or username.
+Your IP address is not included either. A report still holds technical details of the
+failure: where in our code it happened, and the values that code was working with at the time.
+Usually those are product names and prices, but occasionally they include text you sent us,
+such as a cloud recipe request. Sentry stores reports in the <strong>United States</strong>.</p>
+
 <h2>Where your information is stored</h2>
 
 <p>Account data is held in a managed PostgreSQL database hosted on Microsoft Azure in the
@@ -139,10 +156,12 @@ therefore stored outside Hong Kong.</p>
 <h2>Who else sees it</h2>
 
 <ul>
-  <li><strong>Apple</strong> — sign-in, subscriptions and app distribution</li>
+  <li><strong>Apple</strong> — sign-in, subscriptions, app distribution, and App Attest device
+      verification</li>
   <li><strong>Google</strong> — Sign-In if you use it, AdMob for ads, and Gemini for cloud
       recipe generation</li>
   <li><strong>Microsoft Azure</strong> — hosting of the service and database</li>
+  <li><strong>Sentry</strong> — error reports from our server, as described above</li>
 </ul>
 
 <p>We do not sell your information, and we do not share it with anyone else for their own
@@ -165,7 +184,8 @@ marketing.</p>
 <h2>Deleting your account</h2>
 
 <p>You can delete your account from inside the app, under Settings. Deletion removes your
-account record, your favourites and your preferences from our database. Some information may
+account record, your favourites, your preferences and your device security key from our
+database. Some information may
 persist briefly in routine backups before being overwritten.</p>
 
 <h2>Children</h2>
